@@ -28,7 +28,7 @@ const Index = () => {
               <li className="relative mx-2">
                 <div className="flex items-center ">
                   <a href="#explore-section" className="cursor-pointer text-base leading-4 text-gray-600  ">
-                    Explor
+                    Explore
                   </a>
                 </div>
               </li>
