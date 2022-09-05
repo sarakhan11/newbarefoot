@@ -14,6 +14,7 @@ const Index = () => {
             <Image className="cursor-pointer" src="/Top.svg" width={80} height={80}/>
             <button className="block xl:hidden text-gray py-4 " onClick={() => setShowMenu(!showMenu)} >
                <Image src="/icons8-menu-rounded-50.png" height="40" width="40" alt="menu" />
+               
             </button>
             <div className="items-right justify-center flex absolute right-8 p-4 -top-0 text-white z-40 cursor-pointer">
             <ul onClick={() => setIsList(!isList)} className="xl:flex hidden gap-9 font-['Work+Sans']" >
