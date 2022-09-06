@@ -4,20 +4,32 @@ import React from 'react';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 const Index = () => {
-  const [showMenu, setShowMenu] = useState(false);
-  const [isList, setIsList] = useState(false);
+const [showMenu, setShowMenu] = useState(false);
   return (
     <>
       <div className="justify-center mx-auto">
         <div className="">
           <div className="flex flex-wrap justify-between items-center">
             <Image className="cursor-pointer" src="/Top.svg" width={80} height={80}/>
-            <button className="block xl:hidden text-gray py-4 " onClick={() => setShowMenu(!showMenu)} >
-               <Image src="/icons8-menu-rounded-50.png" height="40" width="40" alt="menu" />
+          
+            <button
+          className=" block xl:hidden text-gray   py-4 "
+          onClick={() => setShowMenu(!showMenu)}
+        >
+          <svg
+                fill="#000000"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 30 30"
+                width="30px"
+                height="30px"
+              >
+                <path d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z" />
+              </svg>
+        </button>
 
-            </button>
+       
             <div className="items-right justify-center flex absolute right-8 p-4 -top-0 text-white z-40 cursor-pointer">
-            <ul onClick={() => setIsList(!isList)} className="xl:flex hidden gap-9 font-['Work+Sans']" >
+            <ul className="xl:flex hidden gap-9 font-['Work+Sans']" >
               <li className="cursor-pointer relative">
                 <div className="flex items-center ">
                   <a href="#home-section" className="  cursor-pointer text-base leading-4 text-gray-600 ">
@@ -28,7 +40,7 @@ const Index = () => {
               <li className="relative mx-2">
                 <div className="flex items-center ">
                   <a href="#explore-section" className="cursor-pointer text-base leading-4 text-gray-600  ">
-                    Explor
+                    Explore
                   </a>
                 </div>
               </li>
@@ -68,11 +80,77 @@ const Index = () => {
                 </div>
               </li>
             </ul>
-          </div>
-        </div>
-      </div> 
+            </div>
 
-      <div className="lg:flex relative lg:pb-28 md:pb-18 pb-8  items-center container justify-center mx-auto px-10" id="home">
+            <nav
+        className={showMenu
+            ? "absolute top-0 xl:hidden w-full h-full transform -translate-x-0 z-40 transition duration-700"
+            : "absolute top-0 xl:hidden w-full h-full transform -translate-x-full z-40 transition duration-700"} id="mobile-nav">
+               <div className="items-right justify-center flex absolute right-8 p-4 -top-0  text-white z-40 cursor-pointer">
+              <Image
+                src="/icons8-multiply-50.png"
+                width={40}
+                height={40}
+                alt=""
+                onClick={() => setShowMenu(!showMenu)}
+              />
+            </div>
+            <ul className="xl:hidden flex bg-gray-100 w-full flex-col w-full px-8 rounded-xl my-6">
+              <li className=" cursor-pointer relative pb-4 pt-8">
+                <div className="flex items-center ">
+                  <a href="#home-section" className="cursor-pointer font-normal text-base leading-4 text-gray-600 ">
+                    Home
+                  </a>
+                </div>
+              </li>
+              <li className=" relative py-2">
+                <div className="flex items-center ">
+                  <a href="#explore-section" className="cursor-pointer cursor-pointer font-normal text-base leading-4 text-gray-600 ">
+                    Explore
+                  </a>
+                </div>
+              </li>
+              <li className="relative py-2">
+                <div className="flex items-center ">
+                  <a href="#packages-section" className="cursor-pointer cursor-pointer font-normal text-base leading-4 text-gray-600 ">
+                    Packages
+                  </a>
+                </div>
+              </li>
+              <li className="relative py-2">
+                <div className="flex items-center ">
+                  <a href="#timeline-section" className="cursor-pointer cursor-pointer font-normal text-base leading-4 text-gray-600 ">
+                    Timeline
+                  </a>
+                </div>
+              </li>
+              <li className="relative py-2">
+                <div className="flex items-center ">
+                  <a href="#about-section" className="cursor-pointer cursor-pointer font-normal text-base leading-4 text-gray-600 ">
+                    About
+                  </a>
+                </div>
+              </li>
+              <li className="relative py-2">
+                <div className="flex items-center ">
+                  <a href="#contact-section" className="cursor-pointer cursor-pointer font-normal text-base leading-4 text-gray-600 ">
+                    Contact
+                  </a>
+                </div>
+              </li>
+              <li className="relative py-2">
+                <div className="flex items-center ">
+                  <a href="#register-section" className="cursor-pointer cursor-pointer font-normal text-base leading-4 text-gray-600 ">
+                    Register
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div className="lg:flex relative lg:pb-28 md:pb-18 pb-8 pt-40 items-center container justify-center mx-auto px-10" id="home">
         <div className="   lg:max-w-[31%] lg:pb-0 pb-8">
           <p className="lg:text-9xl md:text-7xl md:text-5xl text-4xl font-normal uppercase z-20 text-gray-800  font-semibold lg:text-left text-center "> Barefoot Adventures</p>
           <p className="pt-4 text-gray-600 lg:pr-8 lg:text-justify text-center ">
